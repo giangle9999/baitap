@@ -22,7 +22,7 @@ namespace BT2.Models
                     strkey = AutoKey.ToString();
                 }else
                 {
-                    strkey = text+ "0" + AutoKey.ToString();
+                    strkey = text + "0" + AutoKey.ToString();
                 }
             }
             return strkey;
