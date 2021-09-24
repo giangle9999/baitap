@@ -15,6 +15,7 @@ namespace BT2.Controllers
         private LTQLDbConText db = new LTQLDbConText();
 
         GenKeyAuto genkey = new GenKeyAuto();
+
         Autogenkey autoK = new Autogenkey();
         // GET: InfoPerSons
         public ActionResult Index()

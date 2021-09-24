@@ -10,6 +10,7 @@ namespace BT2.Models
     {
         public string generatekey2 (string id)
         {
+            
             string strkey = "";
             string numPart = "", strPart = "";
             numPart = Regex.Match(id, @"\d+").Value;

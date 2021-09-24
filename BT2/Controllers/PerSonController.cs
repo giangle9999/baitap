@@ -18,6 +18,7 @@ namespace BT2.Controllers
         public ActionResult Index()
         {
             
+            
             return View(db.PerSons.ToList());
         }
 

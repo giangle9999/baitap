@@ -7,6 +7,7 @@ namespace BT2.Models
 {
     public partial class LTQLDbConText : DbContext
     {
+       
         public LTQLDbConText()
             : base("name=LTQLDbConText")
         {

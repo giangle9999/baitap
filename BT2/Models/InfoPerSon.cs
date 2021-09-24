@@ -7,6 +7,7 @@ namespace BT2.Models
 {
     public class InfoPerSon:PerSon
     {
+        
         public string Description { get; set; }
         public string Sex { get; set; }
     }

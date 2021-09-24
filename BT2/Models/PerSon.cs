@@ -8,6 +8,7 @@ namespace BT2.Models
 {
     public class PerSon
     {
+       
         [Key]
         [Required(ErrorMessage ="Hãy Nhập ID")]
         public String PerSonID { get; set; }

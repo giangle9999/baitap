@@ -9,6 +9,7 @@ namespace BT2.Models
     {
        public string GenKey (string text, string id)
         {
+            
             int AutoKey = Convert.ToInt32(id.Substring(2))+1;
             string strkey = "";
             if (id == null)
