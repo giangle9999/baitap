@@ -22,12 +22,12 @@ namespace BT2.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public ActionResult Login(Account  acc )
+        public ActionResult Login(Account acc)
         {
             if (ModelState.IsValid)
             {
                 string encrytionpass = encry.PasswordEncrytion(acc.Password);
-                var model = db.Accounts.Where(m => m.UserName == acc.UserName && m.Password == encrytionpass).Tolist().Count();
+                var model = db.Accounts.Where(m => m.UserName == acc.UserName && m.Password == encrytionpass).ToList().Count();
                 if (model == 1)
                 {
                     FormsAuthentication.SetAuthCookie(acc.UserName, true);
@@ -35,23 +35,11 @@ namespace BT2.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thông tin đăng nhập không chính xác");
-
-                }    
-                   
+                    ModelState.AddModelError("", "Thong tin không chính xác");
+                }
 
             }
-            return View(Acc);
-            
+            return View(acc);
         }
-        public ActionResult Logout()
-        {
-            FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
-
-        }
-            
-            
     }
-
 }
