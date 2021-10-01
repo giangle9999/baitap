@@ -22,15 +22,15 @@ namespace BT2.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public ActionResult Login(Account Acc)
+        public ActionResult Login(Account  acc )
         {
             if (ModelState.IsValid)
             {
-                string encrytionpass = encry.PasswordEncrytion(Acc.Password);
-                var model = db.Accounts.Where(m => m.UserName == Acc.UserName && m.Password == encrytionpass).Tolist().Count();
+                string encrytionpass = encry.PasswordEncrytion(acc.Password);
+                var model = db.Accounts.Where(m => m.UserName == acc.UserName && m.Password == encrytionpass).Tolist().Count();
                 if (model == 1)
                 {
-                    FormsAuthentication.SetAuthCookie(Acc.UserName, true);
+                    FormsAuthentication.SetAuthCookie(acc.UserName, true);
                     return RedirectToAction("Index", "Home");
                 }
                 else
