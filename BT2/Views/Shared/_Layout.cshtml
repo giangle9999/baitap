@@ -6,7 +6,6 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/ckeditor")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -21,14 +20,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Articles", "Index", "Articles")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("About", "About", "Home", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("Đức đẹp trai", "Index", "People", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("Register", "Register", "Account", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Account", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("Admin", "Index", "HomeAdmin", new { Area = "Admins" }, null)</li>
 
-
+                    <li>@Html.ActionLink("Employees", "Index", "HomeEmp", new { Area = "Employees" }, null)</li>
                 </ul>
             </div>
         </div>
@@ -40,8 +40,9 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    <script src="~/Scripts/bootstrap.js"></script>
+
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/ckeditor")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

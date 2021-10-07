@@ -128,11 +128,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admins\AdminsAreaRegistration.cs" />
+    <Compile Include="Areas\Admins\Controllers\HomeAdminController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InfoPerSonsController.cs" />
     <Compile Include="Controllers\PerSonController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -152,6 +155,7 @@
     <Compile Include="Models\Account.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\Article.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -191,6 +195,26 @@
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\PerSon.cs" />
+    <Compile Include="Models\Role.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Role.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>Role.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Role.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Role.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\role11.cs" />
+    <Compile Include="Models\UsersRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +247,16 @@
       <DependentUpon>Model2.edmx</DependentUpon>
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Role.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Role.edmx</DependentUpon>
+      <LastGenOutput>Role.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Role.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Role.edmx</DependentUpon>
+      <LastGenOutput>Role1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Model1.edmx">
@@ -240,6 +274,15 @@
     <Content Include="Models\Model2.edmx.diagram">
       <DependentUpon>Model2.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\Role.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Role.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Role.edmx.diagram">
+      <DependentUpon>Role.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admins\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\CHANGES.html" />
@@ -626,9 +669,15 @@
     <Content Include="Views\Articles\Details.cshtml" />
     <Content Include="Views\Articles\Edit.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admins\Data\" />
     <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
